@@ -30,10 +30,15 @@ all_samples = np.concatenate((class1_sample, class2_sample), axis=1)
 #print all_samples.shape
 #print all_samples
 
+print "###########"
+print all_samples
+print "###########"
 ### Compute means for overall sample feature wise
 mean_x = np.mean(all_samples[0,:])
 mean_y = np.mean(all_samples[1,:])
 mean_z = np.mean(all_samples[2,:])
+
+print mean_x
 
 mean_vector = np.array([[mean_x],[mean_y],[mean_z]])
 
