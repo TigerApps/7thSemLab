@@ -1,4 +1,6 @@
 print "######################################################################"
+print "Knapsack Encryption algorithm...."
+print
 
 print "Key Generation: "
 b = [7,11,19,39,79,157,313]
