@@ -21,7 +21,7 @@ boys = np.random.normal(mub, sigmab, sizeb)
 
 meanb = float(sum(boys))/sizeb
 temp = 0
-for i in boys:
+for i in boys:   
     temp += (i-mub)*(i-mub)
 varb = temp/sizeb
 
