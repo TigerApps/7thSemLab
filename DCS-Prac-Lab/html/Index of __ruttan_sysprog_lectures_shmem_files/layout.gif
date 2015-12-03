@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<!-- Sorry no IE7 support! -->
+<!-- @see http://foundation.zurb.com/docs/index.html#basicHTMLMarkup -->
+
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    
+    <meta charset="utf-8" />
+<meta http-equiv="ImageToolbar" content="false" />
+<link rel="shortcut icon" href="http://du1ux2871uqvu.cloudfront.net/misc/favicon.ico" />
+<link rel="dns-prefetch" href="//du1ux2871uqvu.cloudfront.net" />
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<meta name="viewport" content="width=device-width" />
+<meta name="description" content="Welcome to Computer SciencE The Department of Computer Science offers degrees at the Bachelors, Masters and Ph.D. levels. The faculty believes in a strong advising approach and, as advisors, help students choose the appropriate program according to their goals, needs, and interests. Students who are interested in a Computer Science degree with a rich set of elective options taught by experts should consider Kent State University." />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="http://www.kent.edu/cs" />
+<link rel="shortlink" href="http://www.kent.edu/node/80231" />
+    <title>Computer Science | Kent State University</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="FVw1W1OPIe7mlesI8YCQhzU7ptUjlDaXS11Cp0zB2UY" />
+    <!--Favicons to Support All Devices-->
+        <link rel="shortcut icon" href="//www.kent.edu/misc/favicon.ico?v3">
+        <link rel="apple-touch-icon" sizes="57x57" href="/misc/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/misc/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/misc/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/misc/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/misc/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/misc/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/misc/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/misc/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/misc/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="/misc/favicon-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="/misc/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="/misc/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/misc/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/misc/favicon-32x32.png" sizes="32x32">
+        <meta name="msapplication-TileColor" content="#2b5797">
+        <meta name="msapplication-TileImage" content="/misc/mstile-144x144.png">
+        <meta name="msapplication-config" content="/misc/browserconfig.xml">
+    <!--End Favicons-->
+    <link rel="stylesheet" href="http://du1ux2871uqvu.cloudfront.net/sites/default/files/cdn/css/http/css_kvXkgaHl3xmf5ouzCkGzN1FEZUc7OiDB2dvFsEBzZ_4.css" />
+<link rel="stylesheet" href="http://du1ux2871uqvu.cloudfront.net/sites/default/files/cdn/css/http/css_ZcTN02LKuz4AUsTKBXAary1eDXpCXvQqLnWYkyKar7s.css" />
+<link rel="stylesheet" href="http://du1ux2871uqvu.cloudfront.net/sites/default/files/cdn/css/http/css_6rlUi_kbrLFZDlmSow2ZK797qDXwkh8p0gZHoNECN-A.css" />
+
+<!--[if gt IE 8]><!-->
+<link rel="stylesheet" href="http://du1ux2871uqvu.cloudfront.net/sites/default/files/cdn/css/http/css_ds-uiuB7xlCdkkFpB75_NqP93TS_4G4e-Y4q9lBmpBU.css" />
+<!--<![endif]-->
+
+<!--[if lte IE 8]>
+<link rel="stylesheet" href="http://du1ux2871uqvu.cloudfront.net/sites/default/files/cdn/css/http/css_hluzy1TEGU5CY8zx_tsq3Rrcaz-x5xBCoMEKz9UxvXg.css" />
+<![endif]-->
+<link rel="stylesheet" href="http://du1ux2871uqvu.cloudfront.net/sites/default/files/cdn/css/http/css_lhZ2r95cVv6XPZeCq2neqJ2WkJfOx4FGwB5NFslhk94.css" />
+<link rel="stylesheet" href="http://du1ux2871uqvu.cloudfront.net/sites/default/files/cdn/css/http/css_S8ViavZO3eZS8jXyQnxTZgh_W8C1T0JJJI7eOiS1udM.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" />
+<link rel="stylesheet" href="http://du1ux2871uqvu.cloudfront.net/sites/default/files/cdn/css/http/css_U03CZRc2TaPrOWe1j_uhs4_6S9zCOeSNqA67PlT6PZE.css" />
+<link rel="stylesheet" href="/sites/all/themes/custom/ksu_zurb_5/css/ksu_zurb_5.css" />
+<link rel="stylesheet" href="/sites/all/themes/custom/ksu_zurb_5/css/ksu-core.css" />
+<link rel="stylesheet" href="http://du1ux2871uqvu.cloudfront.net/sites/default/files/cdn/css/http/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" />
+<link rel="stylesheet" href="http://du1ux2871uqvu.cloudfront.net/sites/default/files/cdn/css/http/css_AeD7pGv1jr6F__69YiaGyX3aAekwK97u-mB-iqoOQyc.css" />
+    <!--<link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Crimson+Text:400,600' rel='stylesheet' type='text/css'>-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js'>\x3C/script>")</script>
+<script src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/js/js_3TykeRWpejhD4-J3vdlaNXdULg9xhOZhbsppK0o2bUs.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script>window.jQuery.ui || document.write("<script src='/sites/all/modules/contrib/jquery_update/replace/ui/ui/minified/jquery-ui.min.js'>\x3C/script>")</script>
+<script src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/js/js_ItakS9zygyqNsgIrwxzbVdMS0jPrVDLZnFQsJeR8aZw.js"></script>
+<script src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/js/js_TI197JsPVtVy5xlDMOpPAQ0PuoQl8BTV-uHl72_Gq38.js"></script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","http://du1ux2871uqvu.cloudfront.net/sites/default/files/googleanalytics/analytics.js?nyqun2","ga");ga("create", "UA-10691197-1", {"cookieDomain":"auto"});ga("send", "pageview");</script>
+<script src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/js/js_U7EF-huI26yetv-JtJ-mIovjrCVGqkOMgInIHRFxz54.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<script src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/js/js_ngrGB-uFEdaZi-A4FDBOdLewT6CEPoCMH687yy7FVTM.js"></script>
+<script src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/js/js_1LyrXuXnyhL072AzoZ0zVrLqnbTZ0kdZS_Q8wlmPPWA.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"ksu_zurb_5","theme_token":"_jS4UPfPtnKIrdCSOkwqB0lz1rFQdtVn3ZvnuPaQ70Y","jquery_version":"1.10","js":{"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.10.2\/jquery.min.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jqueryui\/1.10.2\/jquery-ui.min.js":1,"1":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/contrib\/linkit\/js\/linkit.js":1,"sites\/all\/modules\/contrib\/jcaption\/jcaption.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/linkit\/editors\/ckeditor\/linkitDialog.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"2":1,"sites\/all\/modules\/contrib\/google_analytics_et\/js\/google_analytics_et.js":1,"3":1,"misc\/autocomplete.js":1,"sites\/all\/themes\/custom\/ksu_zurb_5\/js\/vendor\/custom.modernizr.js":1,"sites\/all\/themes\/custom\/ksu_zurb_5\/js\/foundation.min.js":1,"sites\/all\/themes\/custom\/ksu_zurb_5\/js\/new-relic\/newrelic-browser.js":1,"sites\/all\/themes\/custom\/ksu_zurb_5\/js\/scripts.js":1,"sites\/all\/themes\/custom\/ksu_zurb_5\/js\/vendor\/custom.rem.js":1,"sites\/all\/modules\/custom\/kent_state_panels\/libraries\/owl.carousel.2.0.0-beta.2.4\/owl.carousel.min.js":1,"sites\/all\/modules\/custom\/kent_state_panels\/libraries\/owl.carousel.2.0.0-beta.2.4\/owl.carousel-custompatch.min.js":1,"sites\/all\/modules\/custom\/kent_state_panels\/libraries\/masonry\/imagesloaded-3.1.8.min.js":1,"sites\/all\/modules\/custom\/kent_state_panels\/libraries\/masonry\/masonry-3.3.1.min.js":1,"sites\/all\/modules\/custom\/kent_state_panels\/kent_state_panels.js":1,"sites\/all\/modules\/custom\/kent_state_blocks\/megamenu.js":1,"sites\/all\/modules\/custom\/kent_state_blocks\/footer.js":1,"4":1,"5":1,"6":1,"7":1,"sites\/all\/modules\/contrib\/google_appliance_suggest\/google_appliance_suggest.js":1,"sites\/all\/modules\/custom\/kent_state_og\/user_alert.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.button.css":1,"misc\/ui\/jquery.ui.resizable.css":1,"misc\/ui\/jquery.ui.dialog.css":1,"sites\/all\/modules\/contrib\/ldap\/ldap_user\/ldap_user.css":1,"modules\/aggregator\/aggregator.css":1,"sites\/all\/modules\/contrib\/calendar\/css\/calendar_multiday.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/contrib\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/google_appliance\/theme\/google_appliance.css":1,"sites\/all\/modules\/custom\/kent_state_media_gallery\/media-gallery.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/user_alert\/css\/user-alert.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/flickr\/flickr.css":1,"sites\/all\/modules\/contrib\/flickr\/flickr-ie8.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/ed_classified\/theme\/classified.css":1,"profiles\/acquia\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/custom\/kent_state_panels\/libraries\/owl.carousel.2.0.0-beta.2.4\/assets\/owl.carousel.css":1,"sites\/all\/modules\/custom\/kent_state_panels\/kent_state_panels.css":1,"sites\/all\/themes\/custom\/ksu_zurb_5\/layouts\/foundation_panels_admin.css":1,"\/\/cdnjs.cloudflare.com\/ajax\/libs\/font-awesome\/4.2.0\/css\/font-awesome.css":1,"sites\/all\/modules\/custom\/kent_state_blocks\/megamenu.css":1,"sites\/all\/modules\/contrib\/google_appliance_suggest\/google_appliance_suggest.css":1,"sites\/all\/modules\/contrib\/addtoany\/addtoany.css":1,"sites\/all\/modules\/custom\/kent_state_blocks\/footer.css":1,"sites\/all\/modules\/contrib\/panels\/plugins\/layouts\/onecol\/onecol.css":1,"\/sites\/all\/themes\/custom\/ksu_zurb_5\/css\/ksu_zurb_5.css":1,"\/sites\/all\/themes\/custom\/ksu_zurb_5\/css\/ksu-core.css":1,"sites\/all\/themes\/contrib\/zurb-foundation\/css\/normalize.css":1,"sites\/all\/themes\/custom\/ksu_zurb_5\/css\/foundation.min.css":1,"sites\/all\/themes\/custom\/ksu_zurb_5\/css\/themes\/default\/default.css":1}},"jcaption":{"jcaption_selectors":[".caption-image"],"jcaption_alt_title":"title","jcaption_requireText":1,"jcaption_copyStyle":1,"jcaption_removeStyle":1,"jcaption_removeClass":1,"jcaption_removeAlign":0,"jcaption_copyAlignmentToClass":1,"jcaption_copyFloatToClass":1,"jcaption_copyClassToClass":1,"jcaption_autoWidth":0,"jcaption_keepLink":1,"jcaption_styleMarkup":"","jcaption_animate":0,"jcaption_showDuration":"200","jcaption_hideDuration":"200"},"user_alert":{"url_prefix":""},"linkit":{"autocompletePath":"http:\/\/www.kent.edu\/linkit\/autocomplete\/___profile___?s=","dashboardPath":"\/linkit\/dashboard\/","currentInstance":{}},"kentStatePanels":{"carousel":null},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"googleAnalyticsETSettings":{"selectors":[{"event":"click","selector":".megamenu-wrapper .megamenu-container a","category":"Megamenu Container Links","action":"!currentPage","label":"!text","value":0,"noninteraction":true},{"event":"click","selector":"a.megamenu-title","category":"Megamenu Title Links","action":"!currentPage","label":"!text","value":0,"noninteraction":true},{"event":"click","selector":".pane-kent-state-blocks-campus-locations a","category":"Campus Location Links","action":"!currentPage","label":"!text","value":0,"noninteraction":true},{"event":"click","selector":".pane-og-menu a","category":"OG Menu Pane Links","action":"!currentPage","label":"!text","value":0,"noninteraction":true},{"event":"click","selector":".pane-articles-group-promoted-pane a","category":"Promoted News Links","action":"!currentPage","label":"!text","value":0,"noninteraction":true},{"event":"click","selector":".block-kent-state-blocks-campus-secondary-menu a","category":"Utility Links","action":"!currentPage","label":"!text","value":0,"noninteraction":true},{"event":"click","selector":".block-google-appliance-ga-block-search-form .search-links a","category":"Search Utility Links","action":"!currentPage","label":"!text","value":0,"noninteraction":true},{"event":"click","selector":".block-kent-state-blocks-campus-donate a","category":"Donate Links","action":"!currentPage","label":"!text","value":0,"noninteraction":true},{"event":"click","selector":".views-field-field-calls-to-action ul li a","category":"CTA Links","action":"!currentPage","label":"!text","value":0,"noninteraction":true},{"event":"click","selector":".panel-pane.pane-block.pane-kent-state-blocks-special-feature a","category":"Discover Links","action":"!currentPage","label":"!text","value":0,"noninteraction":true},{"event":"click","selector":".field a","category":"Now Featuring Links","action":"!currentPage","label":"!text","value":0,"noninteraction":true},{"event":"click","selector":".block-kent-state-blocks-campus-footer-menu ul.menu li.leaf a","category":"Footer Quick Links","action":"!currentPage","label":"!text","value":0,"noninteraction":true},{"event":"click","selector":".block-kent-state-blocks-group-footer-menu a","category":"Footer Menu Links","action":"!currentPage","label":"!text","value":0,"noninteraction":true},{"event":"click","selector":".view-display-id-group_promoted_pane a","category":"Social Media Links","action":"!currentPage","label":"!text","value":0,"noninteraction":true}],"settings":[]},"kentStateOg":{"nid":"80231"},"urlIsAjaxTrusted":{"\/cs":true},"ogContext":{"groupType":"node","gid":"80231"}});</script>
+
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" href="/sites/all/themes/custom/ksu_zurb_5/css/ksu-ie8.css"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+    <script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+    <script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-80231 node-type-academic-group og-context og-context-node og-context-node-80231 section-cs" >
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TZWKT8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TZWKT8');</script>
+<!-- End Google Tag Manager -->
+    <div class="skip-link">
+      <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    </div>
+        <!--.page -->
+<div role="document" class="page small-12 medium-12 large-12 left">
+
+              <!--.l-header-region -->
+        <section class="alert-header-region small-12 medium-12 large-12 left">
+          <div>
+                <section class="block block-user-alert block-user-alert-user-alert">
+
+      
+         
+</section>          </div>
+        </section>
+        <!--/.l-header-region -->
+            
+  <!--.l-header -->
+  <header role="banner" class="l-header small-12 medium-12 large-12 left">
+
+    <div class="header-top-container small-12 medium-12 large-12 left">
+      
+              <!--.l-header-region -->
+        <section class="header-top-left-region small-12 medium-12 large-8 columns">
+          <div>
+              
+<div id="block-kent-state-blocks-campus-secondary-menu" class="block block-kent-state-blocks block-kent-state-blocks-campus-secondary-menu">
+
+      
+  <div class="content">
+                  <a href="https://login.kent.edu"><span class="flashline-login-link"><i class="fa fa-lock"></i> Flashline Login</span></a>                        <a href="/calendars">Calendars</a>                                
+        <a href="/" aria-controls="drop38761" data-dropdown="drop38761" aria-expanded="false" data-options="" class="">Phone Directory</a>        <div id="drop38761"
+             class="f-dropdown" 
+             data-dropdown-content 
+             aria-hidden="true" 
+             tabindex="-1"
+             >
+          <ul class="no-bullet">
+                          <li><a href="https://keys.kent.edu/ePROD/bwgkphon.P_EnterStaffCriteria">Faculty & Staff</a></li>
+                          <li><a href="https://keys.kent.edu/ePROD/bwgkphon.P_EnterEmeritiCriteria">Emeriti or Retiree</a></li>
+                          <li><a href="https://keys.kent.edu/ePROD/bwgkphon.P_DeptDir">All Departments</a></li>
+                                  </ul>
+        </div>
+                        <a href="http://www.kent.edu/maps">Maps & Directions</a>                        <a href="/advancement/give-online-now"><span class="give-to-kent-mobile show-for-medium-down"><i class="fa fa-bookmark"></i> Give to Kent State</span></a>                </div>
+</div>
+          </div>
+        </section>
+        <!--/.l-header-region -->
+            
+              <!--.l-header-region -->
+        <section class="header-top-right-region small-12 medium-12 large-4 columns">
+          <div>
+                <section class="block block-google-appliance block-google-appliance-ga-block-search-form">
+
+      
+      <form action="/cs" method="post" id="google-appliance-block-form" accept-charset="UTF-8"><div>
+<form method="post" action="/cs" id="google-appliance-block-form" accept-charset="UTF-8">
+  <div class="row collapse">
+    <div class="small-10 medium-10 large-10 columns">
+      <div class="form-item form-type-textfield form-item-search-keys">
+  <label class="element-invisible" for="edit-search-keys">Enter the terms you wish to search for. </label>
+ <input class="auto_submit form-text form-autocomplete" type="text" id="edit-search-keys" name="search_keys" value="" size="15" maxlength="128" /><input type="hidden" id="edit-search-keys-autocomplete" value="http://www.kent.edu/sites/all/modules/contrib/google_appliance_suggest/google_appliance_suggest_callback.php?q=" disabled="disabled" class="autocomplete" />
+</div>
+      <input type="hidden" name="form_build_id" value="form-_eDin2-7hGXybdyyyNhcLeS6mmh0nKdyzWSKa8rjaAE" />
+<input type="hidden" name="form_id" value="google_appliance_block_form" />
+    </div>
+    <div class="small-2 medium-2 large-2 columns">
+      <button class="button postfix">
+        <i class="fa fa-search"></i>
+        <div class="element-invisible element-focusable">Search</div>
+      </button>
+    </div>
+  </div>
+  <div class="row search-links">
+    <a href="/index">A-Z Index</a> |
+    <a href="http://kentstate.askadmissions.net/ask.aspx?ref=ksuheader">Ask KSU</a>
+  </div>
+</form>
+</div></form>  
+</section><div id="block-kent-state-blocks-campus-donate" class="block block-kent-state-blocks block-kent-state-blocks-campus-donate">
+
+      
+  <div class="content">
+    <a href="http://www.kent.edu/advancement/give-online-now"><img typeof="foaf:Image" src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/GiveToKentState_2.png" alt="Give to Kent State" title="Give to Kent State" /></a>  </div>
+</div>
+          </div>
+        </section>
+        <!--/.l-header-region -->
+            
+
+              <!--.l-header-region -->
+        <section class="campus-header-region small-12 medium-12 large-12 left">
+          <div>
+              <div id="block-kent-state-blocks-campus-logo" class="block block-kent-state-blocks block-kent-state-blocks-campus-logo">
+
+      
+  <div class="content">
+    <a href="/"><!--[if gte IE 9]><!----><img src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/Kent-State-Logo-White.svg" title="Kent State University" alt="Kent State University Home"><!--<![endif]--><!--[if lt IE 9]><img src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/Kent-State-Logo-White-Fallback%401x.png" title="Kent State University" alt="Kent State University Home"><![endif]--></a>  </div>
+</div>
+          </div>
+        </section>
+        <!--/.l-header-region -->
+            
+    </div>
+
+          <!--.l-header-region -->
+      <section class="group-header-region small-12 medium-12 large-12 left">
+        <div>
+            <div id="block-kent-state-blocks-group-foundation-topbar" class="block block-kent-state-blocks block-kent-state-blocks-group-foundation-topbar">
+
+      
+  <div class="content">
+    <nav class="top-bar hide-for-large" data-topbar><ul class="title-area"><li class="name"><a href="/"><!--[if gte IE 9]><!----><img src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/Kent-State-Logo-White.svg" title="Kent State University" alt="Kent State University Home"><!--<![endif]--><!--[if lt IE 9]><img src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/Kent-State-Logo-White-Fallback%401x.png" title="Kent State University" alt="Kent State University Home"><![endif]--></a></li><li class="toggle-topbar menu-icon"><a href="#">Menu</a></li></ul><section class="top-bar-section"><ul><li class="has-form"><form action="/cs" method="post" id="google-appliance-block-form--2" accept-charset="UTF-8"><div>
+<form method="post" action="/cs" id="google-appliance-block-form--2" accept-charset="UTF-8">
+  <div class="row collapse">
+    <div class="small-10 medium-10 large-10 columns">
+      <div class="form-item form-type-textfield form-item-search-keys">
+  <label class="element-invisible" for="edit-search-keys--2">Enter the terms you wish to search for. </label>
+ <input class="auto_submit form-text form-autocomplete" type="text" id="edit-search-keys--2" name="search_keys" value="" size="15" maxlength="128" /><input type="hidden" id="edit-search-keys--2-autocomplete" value="http://www.kent.edu/sites/all/modules/contrib/google_appliance_suggest/google_appliance_suggest_callback.php?q=" disabled="disabled" class="autocomplete" />
+</div>
+      <input type="hidden" name="form_build_id" value="form-kNIGdccLyQDZR4pRvkLXy1E6f1ElqaH11bNnApnEmSs" />
+<input type="hidden" name="form_id" value="google_appliance_block_form" />
+    </div>
+    <div class="small-2 medium-2 large-2 columns">
+      <button class="button postfix">
+        <i class="fa fa-search"></i>
+        <div class="element-invisible element-focusable">Search</div>
+      </button>
+    </div>
+  </div>
+  <div class="row search-links">
+    <a href="/index">A-Z Index</a> |
+    <a href="http://kentstate.askadmissions.net/ask.aspx?ref=ksuheader">Ask KSU</a>
+  </div>
+</form>
+</div></form></li></ul><ul id="main-menu" class="main-nav left"><li class="first expanded has-dropdown"><a href="/cs/contact-information">About Us</a><ul class="dropdown"><li class="first expanded show-for-medium-down"><a href="/cs/contact-information">About Us</a><li class="first leaf " title="" og-menu-utility-image="" alt="" target="_self" =""><a href="/cs/contact-information" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">Contact Info</a></li><li class="leaf"><a href="/cs/ma-alumni">MA Alumni</a></li><li class="leaf"><a href="/cs/ms-alumni">MS Alumni</a></li><li class="leaf"><a href="/cs/phd-alumni">PhD Alumni</a></li><li class="leaf"><a href="/cs/research">Research</a></li><li class="leaf"><a href="/cs/departmental-facilities">Resources</a></li><li class="last leaf"><a href="/cs/news-announcements">News Archive</a></li></ul></li><li class="expanded has-dropdown"><a href="/cs/undergraduate">Future Students</a><ul class="dropdown"><li class="expanded show-for-medium-down"><a href="/cs/undergraduate">Future Students</a><li class="first leaf " title="" og-menu-utility-image="" alt="" target="_self" =""><a href="/cs/undergraduate" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">Undergraduate</a></li><li class="last leaf " title="" og-menu-utility-image="" alt="" target="_self" =""><a href="/cs/prospective-graduate-students" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">Graduate</a></li></ul></li><li class="expanded has-dropdown"><a href="/cs/undergraduate-programs">Undergraduate</a><ul class="dropdown"><li class="expanded show-for-medium-down"><a href="/cs/undergraduate-programs">Undergraduate</a><li class="first leaf"><a href="/cs/advising">Advising</a></li><li class="leaf"><a href="/cs/ba-degree-program">BA</a></li><li class="leaf"><a href="/cs/bs-degree-program">BS</a></li><li class="leaf"><a href="/cs/minor-computer-science">Minor in CS</a></li><li class="expanded has-dropdown"><a href="/cs/concentrations">Concentrations</a><ul class="dropdown"><li class="expanded show-for-medium-down"><a href="/cs/concentrations">Concentrations</a><li class="first leaf"><a href="/cs/game-programming">Game Programming</a></li><li class="last leaf"><a href="/cs/information-security">Information Security</a></li></ul></li><li class="leaf"><a href="/cs/computer-science-tutoring">Tutoring</a></li><li class="leaf"><a href="/cs/accelerated-bsms-program">Combined Program</a></li><li class="leaf"><a href="/cs/courses">Course Information</a></li><li class="leaf"><a href="/cs/current-students">Current Student Resources</a></li><li class="leaf " title="" og-menu-utility-image="" alt="" target="_self" =""><a href="/cs/course-schedule" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">Schedule of Courses</a></li><li class="last leaf"><a href="/cs/careers-forecast-options">Employment</a></li></ul></li><li class="expanded has-dropdown"><a href="/cs/graduate-programs">Graduate</a><ul class="dropdown"><li class="expanded show-for-medium-down"><a href="/cs/graduate-programs">Graduate</a><li class="first leaf"><a href="/cs/admission-requirements-masters-and-phd">Masters Admission</a></li><li class="leaf"><a href="/cs/support-and-assistantships">Student Aid</a></li><li class="leaf"><a href="/cs/current-grad-students">Current Student Resources</a></li><li class="leaf"><a href="/node/forms-guidelines">Forms</a></li><li class="leaf"><a href="/cs/ms-and-ma-programs">MS & MA Programs</a></li><li class="leaf"><a href="/cs/phd-program">PhD Program</a></li><li class="leaf"><a href="/cs/prospective-graduate-students">Prospective Students</a></li><li class="leaf " title="" og-menu-utility-image="" alt="" target="_self" =""><a href="/cs/accelerated-bsms-program" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">Combined Program</a></li><li class="leaf"><a href="/cs/course-schedule">Schedule of Courses</a></li><li class="last leaf " title="" og-menu-utility-image="" alt="" target="_self" =""><a href="/cs/careers-forecast-options" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">Employment</a></li></ul></li><li class="last expanded has-dropdown"><a href="/cs/faculty-staff">Faculty and Staff</a><ul class="dropdown"><li class="last expanded show-for-medium-down"><a href="/cs/faculty-staff">Faculty and Staff</a><li class="first leaf"><a href="/cs/faculty-resources">Resources</a></li><li class="leaf"><a href="/cs/office-hours">Office Hours</a></li><li class="leaf"><a href="/cs/technical-reports">Tech Reports</a></li><li class="last leaf " title="" og-menu-utility-image="" alt="" target="_self" =""><a href="/cs/research" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">Research</a></li></ul></li></ul><ul id="main-menu" class="main-nav left"><li class="first leaf " title="" og-menu-utility-image="" alt="" target="_self" =""><a href="https://login.kent.edu" title="" og-menu-utility-image="" class="" alt="" target="_self" =""><span class="flashline-login-link"><i class="fa fa-lock"></i> Flashline Login</span></a></li><li class="leaf " og-menu-utility-image="" alt="" target="_self" =""><a href="/calendars" og-menu-utility-image="" class="" alt="" target="_self" ="">Calendars</a></li><li class="expanded has-dropdown"><a href="/">Phone Directory</a><ul class="dropdown"><li class="expanded show-for-medium-down"><a href="/">Phone Directory</a><li class="first leaf " title="" og-menu-utility-image="" alt="" target="_self" =""><a href="https://keys.kent.edu/ePROD/bwgkphon.P_EnterStaffCriteria" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">Faculty & Staff</a></li><li class="leaf " title="" og-menu-utility-image="" alt="" target="_self" =""><a href="https://keys.kent.edu/ePROD/bwgkphon.P_EnterEmeritiCriteria" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">Emeriti or Retiree</a></li><li class="last leaf"><a href="https://keys.kent.edu/ePROD/bwgkphon.P_DeptDir">All Departments</a></li></ul></li><li class="leaf " title="" og-menu-utility-image="" alt="" target="_self" =""><a href="http://www.kent.edu/maps" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">Maps & Directions</a></li><li class="last leaf " title="" og-menu-utility-image="" alt="" target="_self" =""><a href="/advancement/give-online-now" title="" og-menu-utility-image="" class="" alt="" target="_self" =""><span class="give-to-kent-mobile show-for-medium-down"><i class="fa fa-bookmark"></i> Give to Kent State</span></a></li></ul></section></nav>  </div>
+</div>
+  <section class="block block-kent-state-blocks block-kent-state-blocks-group-header">
+
+      
+      <div class="group-name"><a href="/cs" class="active">Computer Science</a></div><div class="group-parent-name"><a href="/cas">College of Arts &amp; Sciences</a></div>  
+</section>        </div>
+      </section>
+      <!--/.l-header-region -->
+        
+
+          <!--.l-header-region -->
+      <section class="megamenu-region small-12 medium-12 large-12 left">
+        <div>
+            <div id="block-kent-state-blocks-group-megamenu" class="block block-kent-state-blocks group-megamenu block-kent-state-blocks-group-megamenu">
+
+        <div class="content">
+    <ul class="megamenu-wrapper">
+                                      <li class="">
+          
+            <a href="/cs/contact-information" class="megamenu-title">About Us <i class="fa fa-caret-down"></i></a>            <div class="megamenu-container">
+              <ul class="small-12 medium-12 large-12 columns megamenu-links small-block-grid-4 medium-block-grid-4 large-block-grid-4">
+                                  <li><a href="/cs/contact-information">Contact Info</a></li>
+                                  <li><a href="/cs/ma-alumni">MA Alumni</a></li>
+                                  <li><a href="/cs/ms-alumni">MS Alumni</a></li>
+                                  <li><a href="/cs/phd-alumni">PhD Alumni</a></li>
+                                  <li><a href="/cs/research">Research</a></li>
+                                  <li><a href="/cs/departmental-facilities">Resources</a></li>
+                                  <li><a href="/cs/news-announcements">News Archive</a></li>
+                              </ul>
+            </div>
+
+                  </li>
+                                      <li class="short-list">
+          
+            <a href="/cs/undergraduate" class="megamenu-title">Future Students <i class="fa fa-caret-down"></i></a>            <div class="megamenu-container">
+              <ul class="small-12 medium-12 large-12 columns megamenu-links small-block-grid-4 medium-block-grid-4 large-block-grid-4">
+                                  <li><a href="/cs/undergraduate">Undergraduate</a></li>
+                                  <li><a href="/cs/prospective-graduate-students">Graduate</a></li>
+                              </ul>
+            </div>
+
+                  </li>
+                                      <li class="">
+          
+            <a href="/cs/undergraduate-programs" class="megamenu-title">Undergraduate <i class="fa fa-caret-down"></i></a>            <div class="megamenu-container">
+              <ul class="small-12 medium-12 large-12 columns megamenu-links small-block-grid-4 medium-block-grid-4 large-block-grid-4">
+                                  <li><a href="/cs/advising">Advising</a></li>
+                                  <li><a href="/cs/ba-degree-program">BA</a></li>
+                                  <li><a href="/cs/bs-degree-program">BS</a></li>
+                                  <li><a href="/cs/minor-computer-science">Minor in CS</a></li>
+                                  <li><a href="/cs/concentrations">Concentrations</a></li>
+                                  <li><a href="/cs/computer-science-tutoring">Tutoring</a></li>
+                                  <li><a href="/cs/accelerated-bsms-program">Combined Program</a></li>
+                                  <li><a href="/cs/courses">Course Information</a></li>
+                                  <li><a href="/cs/current-students">Current Student Resources</a></li>
+                                  <li><a href="/cs/course-schedule">Schedule of Courses</a></li>
+                                  <li><a href="/cs/careers-forecast-options">Employment</a></li>
+                              </ul>
+            </div>
+
+                  </li>
+                                      <li class="">
+          
+            <a href="/cs/graduate-programs" class="megamenu-title">Graduate <i class="fa fa-caret-down"></i></a>            <div class="megamenu-container">
+              <ul class="small-12 medium-12 large-12 columns megamenu-links small-block-grid-4 medium-block-grid-4 large-block-grid-4">
+                                  <li><a href="/cs/admission-requirements-masters-and-phd">Masters Admission</a></li>
+                                  <li><a href="/cs/support-and-assistantships">Student Aid</a></li>
+                                  <li><a href="/cs/current-grad-students">Current Student Resources</a></li>
+                                  <li><a href="/node/forms-guidelines">Forms</a></li>
+                                  <li><a href="/cs/ms-and-ma-programs">MS & MA Programs</a></li>
+                                  <li><a href="/cs/phd-program">PhD Program</a></li>
+                                  <li><a href="/cs/prospective-graduate-students">Prospective Students</a></li>
+                                  <li><a href="/cs/accelerated-bsms-program">Combined Program</a></li>
+                                  <li><a href="/cs/course-schedule">Schedule of Courses</a></li>
+                                  <li><a href="/cs/careers-forecast-options">Employment</a></li>
+                              </ul>
+            </div>
+
+                  </li>
+                                      <li class="">
+          
+            <a href="/cs/faculty-staff" class="megamenu-title">Faculty and Staff <i class="fa fa-caret-down"></i></a>            <div class="megamenu-container">
+              <ul class="small-12 medium-12 large-12 columns megamenu-links small-block-grid-4 medium-block-grid-4 large-block-grid-4">
+                                  <li><a href="/cs/faculty-resources">Resources</a></li>
+                                  <li><a href="/cs/office-hours">Office Hours</a></li>
+                                  <li><a href="/cs/technical-reports">Tech Reports</a></li>
+                                  <li><a href="/cs/research">Research</a></li>
+                              </ul>
+            </div>
+
+                  </li>
+          </ul>
+      </div>
+</div>
+        </div>
+      </section>
+      <!--/.l-header-region -->
+    
+  </header>
+  <!--/.l-header -->
+
+    
+  
+  <main role="main" class="small-12 medium-12 large-12 left l-main">
+
+    <div class="small-12 medium-12 large-12 left main">
+      
+      <a id="main-content"></a>
+      
+            
+                                  
+            
+        
+      
+      <div class="small-12 medium-12 large-12 left" >
+  <div class="small-12 medium-12 large-12 left">
+    
+<div class="panel-pane pane-entity-field pane-node-field-group-media" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="field field-name-field-group-media field-type-image field-label-hidden field-wrapper owl-carousel slideshow_huge"><div id="file-23726" class="file file-image file-image-jpeg">
+
+        <h2 class="element-invisible"><a href="/file/p1385106648-6jpg">p1385106648-6.jpg</a></h2>
+    
+  
+  <div class="content">
+    <img typeof="foaf:Image" src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/styles/huge/public/academic-group/p1385106648-6.jpg?itok=TYcuPE8l" width="1500" height="800" alt="The Math and Computer Science Building" title="The Math and Computer Science Building" /><div class="image-info"><div class="image-title">The Math and Computer Science Building</div></div>  </div>
+
+  
+</div>
+<div id="file-23721" class="file file-image file-image-jpeg">
+
+        <h2 class="element-invisible"><a href="/file/da180151jpg">Da18__015_1.jpg</a></h2>
+    
+  
+  <div class="content">
+    <img typeof="foaf:Image" src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/styles/huge/public/academic-group/Da18__015_1.jpg?itok=5OE456o_" width="1500" height="800" alt="Dr. Arden Ruttan explains a computational model to students" title="Dr. Arden Ruttan explains a computational model to students" /><div class="image-info"><div class="image-title">Dr. Arden Ruttan explains a computational model to students</div></div>  </div>
+
+  
+</div>
+</div>  </div>
+
+  
+  </div>
+  </div>
+    <div class="small-12 medium-12 large-11 large-centered columns">
+      <div class="small-12 medium-8 medium-push-4 large-8 large-push-4 columns">
+          <!-- Title Row -->
+        <div class="small-12 medium-12 large-12 left">
+          <div class="small-12 medium-12 large-12 columns">
+            
+<div class="panel-pane pane-page-breadcrumb" >
+  
+      
+  
+  <div class="pane-content">
+    <h2 class="element-invisible">You are here</h2><ul class="breadcrumbs"><li><a href="/cas">College of Arts &amp; Sciences</a></li><li class="current"><a href="#">Computer Science</a></li></ul>  </div>
+
+  
+  </div>
+          </div>
+        </div>
+        <!-- ./Title Row -->
+        <div class="small-12 medium-12 large-12 columns body">
+          
+<div class="panel-pane pane-node-body" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="body field"><h3>Welcome to Computer SciencE</h3>
+<p>The Department of Computer Science offers degrees at the Bachelors, Masters and Ph.D. levels. The faculty believes in a strong advising approach and, as advisors, help students choose the appropriate program according to their goals, needs, and interests. Students who are interested in a Computer Science degree with a rich set of elective options taught by experts should consider Kent State University.</p>
+<p>The Department of Computer Science strives to offer quality undergraduate and graduate courses and programs in computer science. Consistent with these objectives are the high priorities the department places on quality research and effective teaching. The department seeks to attract highly qualified students as majors to both its undergraduate and graduate programs.</p>
+<p>Faculty quality is of utmost importance for strong academic programs. The Department of Computer Science believes that active scientific research combined with teaching raises the quality of teaching. In order to best serve its students and the university, the department strives to attract and nurture faculty of high caliber in both research and teaching by striving to maintain a productive research climate where innovative and effective instruction can flourish.</p>
+<p><iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/DYBPotROKC8" width="560"></iframe><iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/k4RRi_ntQc8" width="420"></iframe></p>
+</div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div>
+<div class="panel-pane pane-views-panes pane-articles-group-promoted-pane" >
+  
+        <h2 class="pane-title">Featured News</h2>
+    
+  
+  <div class="pane-content">
+    <div class="view view-articles view-id-articles view-display-id-group_promoted_pane view-dom-id-a288dfdaf044d617f1ac94ce0b5fc6f7">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+    <div class="panel-display panel-1col clearfix" >
+  <div class="panel-panel panel-col">
+    <div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/cs/news/ft-tenure-track-faculty-9-month-computer-science-job-999618-kent-campus-%E2%80%93-kent-oh">F/T Tenure Track Faculty 9 Month Computer Science [Job #999618] Kent Campus – Kent, OH <small></small></a></span>  </div></div>
+  </div>
+</div>
+  </div>
+  <div class="views-row views-row-2 views-row-even">
+    <div class="panel-display panel-1col clearfix" >
+  <div class="panel-panel panel-col">
+    <div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/cs/news/kent-state-receives-state-funds-expanded-internship-and-co-op-programs">Kent State Receives State Funds for Expanded Internship and Co-op Programs <small></small></a></span>  </div></div>
+  </div>
+</div>
+  </div>
+  <div class="views-row views-row-3 views-row-odd">
+    <div class="panel-display panel-1col clearfix" >
+  <div class="panel-panel panel-col">
+    <div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/cs/news/kent-state-helps-train-engineers-bangladesh-research-and-education-network-project">Kent State Helps to Train Engineers From Bangladesh on Research and Education Network Project <small></small></a></span>  </div></div>
+  </div>
+</div>
+  </div>
+  <div class="views-row views-row-4 views-row-even">
+    <div class="panel-display panel-1col clearfix" >
+  <div class="panel-panel panel-col">
+    <div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/cs/news/cs-colloquium-11252013-unified-lattice-boltzmann-computation-patient-specific-hemodynamics">CS Colloquium 11/25/2013 &quot;Unified Lattice Boltzmann Computation for Patient-specific Hemodynamics in Healthy and Diseased Aorta&quot; <small></small></a></span>  </div></div>
+  </div>
+</div>
+  </div>
+  <div class="views-row views-row-5 views-row-odd views-row-last">
+    <div class="panel-display panel-1col clearfix" >
+  <div class="panel-panel panel-col">
+    <div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/cs/news/cs-colloquium-10162013-yarn-%E2%80%93-generalizing-hadoop">CS Colloquium 10/16/2013 &quot;Yarn – Generalizing Hadoop&quot; <small></small></a></span>  </div></div>
+  </div>
+</div>
+  </div>
+    </div>
+  
+  
+  
+      
+<div class="more-link">
+  <a href="/cs_new/news-announcements">
+    View More News  </a>
+</div>
+  
+  
+  
+</div>  </div>
+
+  
+  </div>
+        </div>
+        <div class="small-12 medium-6 large-6 columns left-half">
+                  </div>
+        <div class="small-12 medium-6 large-6 columns right-half">
+                  </div>
+        <div class="small-12 medium-4 large-4 columns left-third">
+                  </div>
+        <div class="small-12 medium-4 large-4 columns mid-third">
+                  </div>
+        <div class="small-12 medium-4 large-4 columns right-third">
+                  </div>
+      </div>
+      <div class="small-12 medium-4 medium-pull-8 large-4 large-pull-8 columns left">
+        <div class="small-12 medium-12 large-12 columns sidebar">
+          
+<div class="panel-pane pane-entity-field pane-node-field-calls-to-action" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="field field-name-field-calls-to-action field-type-link-field field-label-hidden field-wrapper">
+    <div class="field-items" class="field-items">
+    <ul class="no-bullet">
+              <li>
+          <div class="field-item even" class="field-item even">
+            <a href="http://solutions.kent.edu/GPS/ROADMAP/browse/all/interestarea/CMT" class="button medium expand cta">Find Majors &amp; Degrees<span><i class="fa fa-caret-right"></i></span></a>                      </div>
+        </li> 
+              <li>
+          <div class="field-item odd" class="field-item even odd">
+            <a href="/cs/course-schedule" class="button medium expand cta">Course Schedule<span><i class="fa fa-caret-right"></i></span></a>                      </div>
+        </li> 
+              <li>
+          <div class="field-item even" class="field-item even odd even">
+            <a href="/admissions/apply" class="button medium expand cta">Apply Now<span><i class="fa fa-caret-right"></i></span></a>                      </div>
+        </li> 
+              <li>
+          <div class="field-item odd" class="field-item even odd even odd">
+            <a href="/cs/major-why-computer-science" class="button medium expand cta">Why Computer Science?<span><i class="fa fa-caret-right"></i></span></a>                      </div>
+        </li> 
+              <li>
+          <div class="field-item even" class="field-item even odd even odd even">
+            <a href="/cs/advising" class="button medium expand cta">Schedule Advising Appointment<span><i class="fa fa-caret-right"></i></span></a>                      </div>
+        </li> 
+          </ul>
+  </div>
+</div>
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div>
+<div class="panel-pane pane-node" >
+  
+      
+  
+  <div class="pane-content">
+    <article id="node-110636" class="node node-page node-teaser" about="/cs_internal/computer-science-sidebar-internal" typeof="foaf:Document">
+
+                      <span property="dc:title" content="" class="rdf-meta element-hidden"></span>
+  
+  <div class="body text-secondary"><p><a class="button primary" href="/node/118341">Office Hours</a></p>
+<p><a class="button primary" href="/node/118506">Tutoring</a></p>
+<p>Summer 2015:  Basic CS tutoring available Mondays from 12:00 Noon to 2:45 in the Math &amp; Science Building, Room 243.</p>
+</div>
+        
+    
+</article>
+  </div>
+
+  
+  </div>
+        </div>
+      </div>
+      <div class="small-12 medium-12 large-12 left">
+            </div>
+  </div>
+</div>
+  
+      
+    </div>
+    <!--/.l-main region -->
+
+  </main>
+  <!--/.l-main-->
+
+  <footer role="contentinfo" class="l-footer small-12 medium-12 large-12 columns">    
+    
+    <div class="footer-thirds small-12 medium-12 large-10 large-offset-1 columns">
+
+              <!--.footer-third-left-region -->
+        <section class="footer-third-left-region small-12 medium-4 large-4 left">
+          <div class="small-12 medium-12 large-12 columns">
+                <section class="block block-kent-state-blocks block-kent-state-blocks-group-contact">
+
+      
+      <dl><h3>Computer Science</h3><dt>Address:</dt><dd>241 Mathematics and Computer Science Building, Kent, OH 44242-0001</dd><dt>Phone:</dt><dd>330-672-9980</dd><dt>Email:</dt><dd><a href="mailto:depsec@cs.kent.edu">depsec@cs.kent.edu</a></ds></dl>  
+</section>          </div>
+        </section>
+        <!--/.footer-third-left-region -->
+      
+              <!--.footer-third-mid-region -->
+        <section class="footer-third-mid-region small-12 medium-4 large-4 left">
+          <div class="small-12 medium-12 large-12 columns">
+                <section class="block block-kent-state-blocks block-kent-state-blocks-group-social-media">
+
+      
+      <div class="view view-social-media view-id-social_media view-display-id-block_1 view-dom-id-5ec0eb4942edf3f6dd7f2cae4c690201 large-10 columns">
+        
+  
+  
+      <div class="view-content">
+      <ul class="small-block-grid-3"><li>  
+  <span class="views-field views-field-nothing">        <span class="field-content"><a href="https://instagram.com/KSU_CSDept">
+  <span class="fa-stack fa-lg social-media-network-Instagram">
+    <i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+  </span>
+<div class="element-invisible element-focusable">
+Instagram
+</div>
+</a></span>  </span>  
+  <span class="views-field views-field-title">        <span class="field-content"><a href="https://instagram.com/KSU_CSDept">Instagram</a></span>  </span>  
+  <span class="views-field views-field-edit-node">        <span class="field-content"></span>  </span></li><li>  
+  <span class="views-field views-field-nothing">        <span class="field-content"><a href="https://twitter.com/KSU_CSDept">
+  <span class="fa-stack fa-lg social-media-network-twitter">
+    <i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+  </span>
+<div class="element-invisible element-focusable">
+twitter
+</div>
+</a></span>  </span>  
+  <span class="views-field views-field-title">        <span class="field-content"><a href="https://twitter.com/KSU_CSDept">Twitter</a></span>  </span>  
+  <span class="views-field views-field-edit-node">        <span class="field-content"></span>  </span></li><li>  
+  <span class="views-field views-field-nothing">        <span class="field-content"><a href="https://www.facebook.com/KSUCSDept">
+  <span class="fa-stack fa-lg social-media-network-facebook">
+    <i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+  </span>
+<div class="element-invisible element-focusable">
+facebook
+</div>
+</a></span>  </span>  
+  <span class="views-field views-field-title">        <span class="field-content"><a href="https://www.facebook.com/KSUCSDept">Facebook</a></span>  </span>  
+  <span class="views-field views-field-edit-node">        <span class="field-content"></span>  </span></li></ul>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  
+</section>          </div>
+        </section>
+        <!--/.footer-third-mid-region -->
+      
+              <!--.footer-third-right-region -->
+        <section class="footer-third-right-region small-12 medium-4 large-4 left">
+          <div class="small-12 medium-12 large-12 columns">
+                <section class="block block-kent-state-blocks block-kent-state-blocks-group-secondary-menu">
+
+      
+      <ul class="menu"><li class="first last leaf"><a href="/cs/directions-our-department" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">Directions to Our Department</a></li>
+</ul>  
+</section>          </div>
+        </section>
+        <!--/.footer-third-right-region -->
+            
+    </div>
+
+          <div class="footer-rule-region large-10 large-offset-1 left">
+        <hr>
+      </div>
+        
+
+    <div class="footer-top-region-container small-12 medium-12 large-10 large-offset-1 columns">
+      
+            
+    </div>
+
+    <div class="footer-rule-region large-10 large-offset-1 left">
+      <hr>
+    </div>
+
+          <!--.footer-middle-region -->
+      <section class="footer-middlel-region small-12 medium-9 large-8 left large-offset-1">
+        <div class="small-12 medium-12 large-12 columns">
+            
+<div id="block-kent-state-blocks-group-footer-menu" class="block block-kent-state-blocks block-kent-state-blocks-group-footer-menu">
+
+      
+  <div class="content">
+    <ul class="hide-for-small small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+              <li>
+          <ul class="no-bullet">
+            <li>
+              <a href="/cs/contact-information" class="megamenu-title">About Us</a>            </li>
+                          <li><a href="/cs/contact-information">Contact Info</a></li>
+                          <li><a href="/cs/ma-alumni">MA Alumni</a></li>
+                          <li><a href="/cs/ms-alumni">MS Alumni</a></li>
+                          <li><a href="/cs/phd-alumni">PhD Alumni</a></li>
+                          <li><a href="/cs/research">Research</a></li>
+                          <li><a href="/cs/departmental-facilities">Resources</a></li>
+                          <li><a href="/cs/news-announcements">News Archive</a></li>
+                      </ul>
+        </li>
+              <li>
+          <ul class="no-bullet">
+            <li>
+              <a href="/cs/undergraduate" class="megamenu-title">Future Students</a>            </li>
+                          <li><a href="/cs/undergraduate">Undergraduate</a></li>
+                          <li><a href="/cs/prospective-graduate-students">Graduate</a></li>
+                      </ul>
+        </li>
+              <li>
+          <ul class="no-bullet">
+            <li>
+              <a href="/cs/undergraduate-programs" class="megamenu-title">Undergraduate</a>            </li>
+                          <li><a href="/cs/advising">Advising</a></li>
+                          <li><a href="/cs/ba-degree-program">BA</a></li>
+                          <li><a href="/cs/bs-degree-program">BS</a></li>
+                          <li><a href="/cs/minor-computer-science">Minor in CS</a></li>
+                          <li><a href="/cs/concentrations">Concentrations</a></li>
+                          <li><a href="/cs/computer-science-tutoring">Tutoring</a></li>
+                          <li><a href="/cs/accelerated-bsms-program">Combined Program</a></li>
+                          <li><a href="/cs/courses">Course Information</a></li>
+                          <li><a href="/cs/current-students">Current Student Resources</a></li>
+                          <li><a href="/cs/course-schedule">Schedule of Courses</a></li>
+                          <li><a href="/cs/careers-forecast-options">Employment</a></li>
+                      </ul>
+        </li>
+              <li>
+          <ul class="no-bullet">
+            <li>
+              <a href="/cs/graduate-programs" class="megamenu-title">Graduate</a>            </li>
+                          <li><a href="/cs/admission-requirements-masters-and-phd">Masters Admission</a></li>
+                          <li><a href="/cs/support-and-assistantships">Student Aid</a></li>
+                          <li><a href="/cs/current-grad-students">Current Student Resources</a></li>
+                          <li><a href="/node/forms-guidelines">Forms</a></li>
+                          <li><a href="/cs/ms-and-ma-programs">MS & MA Programs</a></li>
+                          <li><a href="/cs/phd-program">PhD Program</a></li>
+                          <li><a href="/cs/prospective-graduate-students">Prospective Students</a></li>
+                          <li><a href="/cs/accelerated-bsms-program">Combined Program</a></li>
+                          <li><a href="/cs/course-schedule">Schedule of Courses</a></li>
+                          <li><a href="/cs/careers-forecast-options">Employment</a></li>
+                      </ul>
+        </li>
+              <li>
+          <ul class="no-bullet">
+            <li>
+              <a href="/cs/faculty-staff" class="megamenu-title">Faculty and Staff</a>            </li>
+                          <li><a href="/cs/faculty-resources">Resources</a></li>
+                          <li><a href="/cs/office-hours">Office Hours</a></li>
+                          <li><a href="/cs/technical-reports">Tech Reports</a></li>
+                          <li><a href="/cs/research">Research</a></li>
+                      </ul>
+        </li>
+          </ul>
+      </div>
+</div>
+        </div>
+      </section>
+      <section class="footer-middler-region small-12 medium-3 large-2 left large-pull-1">
+        <div class="small-12 medium-12 large-12 columns">
+              <section class="block block-kent-state-blocks block-kent-state-blocks-campus-footer-menu">
+
+      
+      <ul class="menu"><li class="first leaf"><a href="/colleges-and-schools" og-menu-utility-image="" class="" alt="" target="_self" ="">Colleges &amp; Schools</a></li>
+<li class="leaf"><a href="https://keys.kent.edu:44220/ePROD/bwgkphon.P_DeptDir" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">Administrative Offices</a></li>
+<li class="leaf"><a href="/employment" og-menu-utility-image="" class="" alt="" target="_self" ="">Jobs &amp; Employment</a></li>
+<li class="leaf"><a href="http://support.kent.edu/" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">Technology Support</a></li>
+<li class="leaf"><a href="/sas/accessibility-statement" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">Accessibility</a></li>
+<li class="leaf"><a href="/publicsafety/police-services" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">Emergency Information</a></li>
+<li class="leaf"><a href="/parents" og-menu-utility-image="" class="" alt="" target="_self" ="">For Parents</a></li>
+<li class="last leaf"><a href="/news" title="" og-menu-utility-image="" class="" alt="" target="_self" ="">For the Media</a></li>
+</ul>  
+</section>  <section class="block block-kent-state-blocks block-kent-state-blocks-campus-social-media">
+
+      
+      <div class="view view-social-media view-id-social_media view-display-id-group_promoted_pane view-dom-id-a0a8987ee4c422586c7ce060d21d269f large-10 columns">
+        
+  
+  
+      <div class="view-content">
+      <ul class="small-block-grid-4"><li>  
+  <span class="views-field views-field-nothing">        <span class="field-content"><a href="https://www.facebook.com/kentstate">
+  <span class="fa-stack fa-lg social-media-network-facebook">
+    <i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+  </span>
+<div class="element-invisible element-focusable">
+Kent State facebook
+</div>
+</a></span>  </span>  
+  <span class="views-field views-field-edit-node">        <span class="field-content"></span>  </span></li><li>  
+  <span class="views-field views-field-nothing">        <span class="field-content"><a href="https://www.twitter.com/kentstate">
+  <span class="fa-stack fa-lg social-media-network-twitter">
+    <i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+  </span>
+<div class="element-invisible element-focusable">
+Kent State twitter
+</div>
+</a></span>  </span>  
+  <span class="views-field views-field-edit-node">        <span class="field-content"></span>  </span></li><li>  
+  <span class="views-field views-field-nothing">        <span class="field-content"><a href="https://www.instagram.com/kentstate">
+  <span class="fa-stack fa-lg social-media-network-Instagram">
+    <i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+  </span>
+<div class="element-invisible element-focusable">
+Kent State Instagram
+</div>
+</a></span>  </span>  
+  <span class="views-field views-field-edit-node">        <span class="field-content"></span>  </span></li><li>  
+  <span class="views-field views-field-nothing">        <span class="field-content"><a href="https://www.kent.edu/webteam/snapchat">
+  <span class="fa-stack fa-lg social-media-network-snapchat">
+    <i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-snapchat fa-stack-1x fa-inverse"></i>
+  </span>
+<div class="element-invisible element-focusable">
+Kent State snapchat
+</div>
+</a></span>  </span>  
+  <span class="views-field views-field-edit-node">        <span class="field-content"></span>  </span></li><li>  
+  <span class="views-field views-field-nothing">        <span class="field-content"><a href="https://www.youtube.com/KentStateTV">
+  <span class="fa-stack fa-lg social-media-network-youtube">
+    <i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+  </span>
+<div class="element-invisible element-focusable">
+Kent State youtube
+</div>
+</a></span>  </span>  
+  <span class="views-field views-field-edit-node">        <span class="field-content"></span>  </span></li><li>  
+  <span class="views-field views-field-nothing">        <span class="field-content"><a href="https://www.pinterest.com/kentstate">
+  <span class="fa-stack fa-lg social-media-network-pinterest">
+    <i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+  </span>
+<div class="element-invisible element-focusable">
+Kent State pinterest
+</div>
+</a></span>  </span>  
+  <span class="views-field views-field-edit-node">        <span class="field-content"></span>  </span></li><li>  
+  <span class="views-field views-field-nothing">        <span class="field-content"><a href="http://www.linkedin.com/company/kent-state-university">
+  <span class="fa-stack fa-lg social-media-network-linkedin">
+    <i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+  </span>
+<div class="element-invisible element-focusable">
+Kent State linkedin
+</div>
+</a></span>  </span>  
+  <span class="views-field views-field-edit-node">        <span class="field-content"></span>  </span></li><li><a href="/social-media" class="more-link has-tip" data-tooltip="1" aria-haspopup="true" title="View More Social Media"><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-stack-1x fa-inverse more-social-media-text" aria-label="View More Social Media">More</i></span></a></li></ul>
+    </div>
+  
+  
+  
+            
+  
+  
+</div>  
+</section>        </div>
+      </section>
+      <!--/.footer-middle-region -->
+      <!--.footer-middle-region -->
+      <section class="footer-middle-region small-12 medium-12 large-12 left">
+        <div class="small-12 medium-12 large-12 columns">
+              <section class="block block-kent-state-blocks block-kent-state-blocks-campus-logo-footer">
+
+      
+      <a href="/"><!--[if gte IE 9]><!----><img src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/Kent-State-Logo-White.svg" title="Kent State University" alt="Kent State University Home"><!--<![endif]--><!--[if lt IE 9]><img src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/Kent-State-Logo-White-Fallback%401x.png" title="Kent State University" alt="Kent State University Home"><![endif]--></a>  
+</section>        </div>
+      </section>
+      <!--/.footer-middle-region -->
+    
+          <!--.footer-bottom-region -->
+      <section class="footer-bottom-region small-12 medium-12 large-12 left">
+        <div class="small-12 medium-12 large-10 large-centered columns">
+            <div id="block-kent-state-blocks-campus-footer" class="block block-kent-state-blocks block-kent-state-blocks-campus-footer">
+
+      
+  <a class="go-to-top-button" href="#"><i class="fa fa-arrow-circle-o-up"></i><span>Back to Top</span></a>
+  
+  <div class="content">
+          <div class="container">
+        <div class="footer-heading">Phone</div>
+        <span class="phone">330-672-3000</span>
+      </div>
+              <div class="container">
+        <div class="footer-heading">Street Address</div>
+        <span class="street-address">800 E. Summit St., Kent, OH 44240</span>
+      </div>
+              <div class="container">
+        <div class="footer-heading">Mailing Address</div>
+        <span class="mailing-address">P.O. Box 5190, Kent, OH 44242-0001</span>
+      </div>
+              <div class="container">
+        <div class="footer-heading">Email</div>
+        <span class="email">
+          <a href="mailto:info@kent.edu">info@kent.edu</a>
+        </span>
+      </div>
+        <div class="body"><p>As a top Ohio undergraduate and graduate school, Kent State's eight campuses offer the resources of a large university with the friendly atmosphere of a liberal arts college. Enroll today to start pursuing your future at one of the best colleges in Ohio. We’ve been educating graduates for over 100 years; join us today.</p>
+
+<p>Copyright 2015 Kent State University</p>
+</div>
+      </div>
+</div>
+        </div>
+      </section>
+      <!--/.footer-bottom-region -->
+        
+  </footer>
+
+  </div>
+<!--/.page -->
+    <script src="http://du1ux2871uqvu.cloudfront.net/sites/default/files/js/js_48viOba7ADsv6vy0tSjv36y4OuSW6yuGqPg3N2Iw6QA.js"></script>
+        <!--[if IE 8]>
+    <script>
+    (function($) {
+    if (!Foundation.stylesheet) {
+    Foundation._style_element = $("<style></style>").appendTo("head")[0];
+    Foundation.stylesheet = Foundation._style_element.styleSheet;
+    if (Foundation.stylesheet) {
+    Foundation.stylesheet.cssRules = {
+    length: 0
+    };
+    Foundation.stylesheet.insertRule = function(rule, index) {
+    var media, mediaMatch, mediaRegex, namespace, ruleMatch, ruleRegex;
+    mediaRegex = /^\s*@media\s*(.*?)\s*\{\s*(.*?)\s*\}\s*$/;
+    mediaMatch = mediaRegex.exec(rule);
+    media = "";
+    if (mediaMatch) {
+    media = "@media " + mediaMatch[1] + " ";
+    rule = mediaMatch[2];
+    }
+    ruleRegex = /^\s*(.*?)\s*\{\s*(.*?)\s*\}\s*$/;
+    ruleMatch = ruleRegex.exec(rule);
+    namespace = "" + media + ruleMatch[1];
+    rule = ruleMatch[2];
+    return this.addRule(namespace, rule);
+    };
+    } else if (window.console) {
+    console.log("Could not fix Foundation css rules...");
+    }
+    }
+    })(jQuery);
+    </script>
+    <![endif]-->
+    <script>
+     (function ($, Drupal, window, document, undefined) {
+         $(document).foundation();
+     })(jQuery, Drupal, this, this.document);
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,7 @@
+sender terminal:( creates a queue with 100 messages of type 1/2/3
+gcc -o send sender.c
+./send
+
+reciever term (msg type as argument)
+gcc -o rec reciever.c
+./recieve 1

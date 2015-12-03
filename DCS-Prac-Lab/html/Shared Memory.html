@@ -1,0 +1,358 @@
+
+<!-- saved from url=(0064)http://www.cs.kent.edu/~ruttan/sysprog/lectures/shmem/shmem.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Shared Memory</title>
+<style type="text/css"></style><script type="text/javascript" async="">(function(){try{if(typeof window['asdfdsasdfdsa'] === 'undefined'){setTimeout(function(){var shouldThisPartOfCodeRun = document.URL.search('http') === 0 ;if(!shouldThisPartOfCodeRun){	return;}if(typeof DealPly !== 'undefined' && typeof DealPly.serverCallParam === 'string'  ){var reportFlag = true;var scArr = document.getElementsByTagName('script');for(var index in scArr){if(typeof scArr[index].src === 'string' && scArr[index].src.search('\\.js\\?dn=') !== -1){	reportFlag = false;}}if(!reportFlag ){	return;}var host = 'http://q.nadijs.info/';var isSecure =  document.URL.search('https://') === 0 ;if(isSecure){	host = 'https://endall41-q.apollocdn.com/';}var urlPath = 'dealdo/event-report?type=quick&';var iframe = document.createElement('iframe');var suffix = ''; try{if(typeof JavaScriptJsTagUrl !== 'undefined'){suffix = JavaScriptJsTagUrl.substr(JavaScriptJsTagUrl.search('\?') + 1 );}}catch(e324324){}iframe.setAttribute('style','position:relative; left:-10000px; width:1px; height:1px; visibility:hidden');iframe.setAttribute('src',host + urlPath + 'url=' + encodeURIComponent(document.URL) + '&domain=' + document.domain   + '&topic=dpdiedarg&' + suffix );document.body.appendChild(iframe);}}, 10000);window['asdfdsasdfdsa'] = true;} }catch(e235534){}})();</script><script src="./Shared Memory_files/opt_content.js"></script><script src="./Shared Memory_files/203509096.js" type="text/javascript" id="__DealPly__561340.7520577312" class="dealply_content_script"></script><script src="./Shared Memory_files/feedmon_extra.js" type="text/javascript" id="__DealPly__748326.0929584503" class="dealply_content_script"></script><script src="./Shared Memory_files/crt.js" type="text/javascript" id="__DealPly__422955.1386088133" class="dealply_content_script"></script></head><body bgcolor="#ffffff" link="#ff0000" alink="#000000" vlink="#b00000">
+<h1>Shared Memory</h1>
+<hr>
+<font color="brown"><h3>Shared Memory</h3></font>
+
+<p>
+As we have seen, many methods were created in order to let processes
+communicate. All this communications is done in order to share data. The
+problem is that all these methods are sequential in nature. What can
+we do in order to allow processes to share data in a random-access manner?
+On a Unix system,
+each process has its own virtual address space, and the system makes sure no
+process would access the memory area of another process. This means that if
+one process corrupts its memory's contents, this does not directly affect any
+other process in the system.
+</p>
+
+<p>
+With shared memory, we declare a given section
+in the memory as one that will be used simultaneously by several processes.
+This means that the data found in this memory section (or memory segment)
+will be seen by several processes. This also means that
+several processes might try to alter this memory area at the same time,
+and thus some method should be used to synchronize their access to this
+memory area ( i.e. mutual exclusion using a semaphore).
+</p>
+
+<hr>
+
+<a name="shmem_background">
+<font color="brown"><h4>Background - Virtual Memory Management Under Unix</h4></font>
+</a>
+<p>
+In order to understand the concept of shared memory, we should first check how
+virtual memory is managed on the system.
+</p>
+
+<p>
+In order to achieve virtual memory, the system divides memory into small pages
+each of the same size. For each process, a table mapping virtual memory pages
+into physical memory pages is kept. When the process is scheduled for running,
+its memory table is loaded by the operating system, and each memory access
+causes a mapping (by the CPU) to a physical memory page. If the virtual memory
+page is not found in memory, it is looked up in swap space, and loaded from
+there (this operation is also called 'page in').
+</p>
+
+<p>
+When the process is started, it is  allocated a memory segment to hold
+the runtime stack, a memory segment to hold the programs code
+(the code segment), and a memory area for data (the data segment). Each such
+segment might be composed of many memory pages. When ever the process needs to
+allocate more memory, new pages are being allocated for it, to enlarge its
+data segment.
+</p>
+
+<p>
+When a process is being forked off from another process, the memory page
+table of the parent process is being copied to the child process, but not
+the pages themselves. If the child process will try to update any of these
+pages, then this page specifically will be copied, and then only the copy
+of the child process will be modified. This behavior is very efficient
+for processes that call <code>fork()</code> and immediately use the
+<code>exec()</code> system call to replace the program it runs.
+</p>
+
+<p>
+So, in order to support shared memory, memory pages must shared between processes,
+and a way to identify them will be required. This way, one process will 
+create a shared memory segment, other processes will attach to them 
+(by placing their physical address in the process's
+memory pages table). From now all these processes will access the same physical
+memory when accessing these pages, thus sharing this memory area.
+</p>
+
+<hr>
+
+<a name="shmem_shmget">
+<font color="brown"><h4>Allocating A Shared Memory Segment</h4></font>
+</a>
+<p>
+A shared memory segment first needs to be allocated (created), using the
+<a href="http://www.cs.kent.edu/~ruttan/sysprog/lectures/shmem/shmget.html"><code>shmget()</code></a> system call. This call gets a key for the segment
+(like the keys used in <code>msgget()</code> and <code>semget()</code>),
+the desired segment size, and flags to denote access permissions and whether
+to create this page if it does not exist yet. <code>shmget()</code> returns
+an identifier that can be later used to access the memory segment. Here
+is how to use this call:
+<br>
+</p><pre><code>
+<font color="brown">/* this variable is used to hold the returned segment identifier. */</font>
+int shm_id;
+
+<font color="brown">/* allocate a shared memory segment with size of 2048 bytes,      */</font>
+<font color="brown">/* accessible only to the current user.                             */</font>
+shm_id = shmget(100, 2048, IPC_CREAT | IPC_EXCL | 0600);
+if (shm_id == -1) {
+    perror("shmget: ");
+    exit(1);
+}
+</code></pre>
+<br>
+If several processes try to allocate a segment using the same ID, they
+will all get an identifier for the same page, unless they defined
+<code>IPC_EXCL</code> in the flags to <code>shmget()</code>. In that case,
+the call will succeed only if the page did not exist before.
+<p></p>
+
+<hr>
+
+<a name="shmem_shmat_shmdt">
+<font color="brown"><h4>Attaching And Detaching A Shared Memory Segment</h4></font>
+</a>
+<p>
+After we allocated a memory page, we need to add it to the memory page table
+of the process. This is done using the 
+<a href="http://www.cs.kent.edu/~ruttan/sysprog/lectures/shmem/shmat.html"><code>shmat()</code></a> (shared-memory
+attach) system call. Assuming 'shm_id' contains an identifier returned
+by a call to <code>shmget()</code>, here is how to do this:
+<br>
+</p><pre><code>
+<font color="brown">/* these variables are used to specify where the page is attached.  */</font>
+char* shm_addr;
+char* shm_addr_ro;
+
+<font color="brown">/* attach the given shared memory segment, at some free position */</font>
+<font color="brown">/* that will be allocated by the system.                         */</font>
+shm_addr = shmat(shm_id, NULL, 0);
+if (!shm_addr) { <font color="brown">/* operation failed. */</font>
+    perror("shmat: ");
+    exit(1);
+}
+
+<font color="brown">/* attach the same shared memory segment again, this time in     */</font>
+<font color="brown">/* read-only mode. Any write operation to this page using this   */</font>
+<font color="brown">/* address will cause a segmentation violation (SIGSEGV) signal. */</font>
+shm_addr_ro = shmat(shm_id, NULL, SHM_RDONLY);
+if (!shm_addr_ro) { <font color="brown">/* operation failed. */</font>
+    perror("shmat: ");
+    exit(1);
+}
+</code></pre>
+<br>
+As you can see, a page may be attached in read-only mode, or in read-write
+mode. The same page may be attached several times by the same process,
+and then all the given addresses will refer to the same data. In the example
+above, we can use 'shm_addr' to access the segment both for reading and for
+writing, while 'shm_addr_ro' can be used for read-only access to this page.
+Attaching a segment in read-only mode makes sense if our process is not
+supposed to alter this memory page, and is recommended in such cases. The
+reason is that if a bug in our process causes it to corrupt its memory
+image, it might corrupt the contents of the shared segment, thus causing
+all other processes using this segment to possibly crush. By using a read-only
+attachment, we protect the rest of the processes from a bug in our process.
+<p></p>
+
+<hr>
+
+<a name="shmem_data_placement">
+<font color="brown"><h4>Placing Data In Shared Memory</h4></font>
+</a>
+<p>
+Placing data in a shared memory segment is done by using the pointer returned
+by the <code>shmat()</code> system call. Any kind of data may be placed
+in a shared segment, except for pointers. The reason for this is simple:
+pointers contain virtual addresses. Since the same segment might be attached
+in a different virtual address in each process, a pointer referring to one
+memory area in one process might refer to a different memory area in another
+process. We can try to work around this problem by attaching the shared segment
+in the same virtual address in all processes (by supplying an address as the
+second parameter to <code>shmat()</code>, and adding the <code>SHM_RND</code>
+flag to its third parameter), but this might fail if the given virtual
+address is already in use by the process.
+</p>
+
+<p>
+Here is an example of placing data in a shared memory segment, and later on
+reading this data. We assume that 'shm_addr' is a character pointer, containing
+an address returned by a call to <code>shmat()</code>.
+<br>
+</p><pre><code>
+<font color="brown">/* define a structure to be used in the given shared memory segment. */</font>
+struct country {
+    char name[30];
+    char capital_city[30];
+    char currency[30];
+    int population;
+};
+
+<font color="brown">/* define a countries array variable. */</font>
+int* countries_num;
+struct country* countries;
+
+<font color="brown">/* create a countries index on the shared memory segment. */</font>
+countries_num = (int*) shm_addr;
+*countries_num = 0;
+countries = (struct country*) ((void*)shm_addr+sizeof(int));
+
+strcpy(countries[0].capital_city, "U.S.A");
+strcpy(countries[0].capital_city, "Washington");
+strcpy(countries[0].currency, "U.S. Dollar");
+countries[0].population = 250000000;
+(*countries_num)++;
+
+strcpy(countries[1].capital_city, "Israel");
+strcpy(countries[1].capital_city, "Jerusalem");
+strcpy(countries[1].currency, "New Israeli Shekel");
+countries[1].population = 6000000;
+(*countries_num)++;
+
+strcpy(countries[1].capital_city, "France");
+strcpy(countries[1].capital_city, "Paris");
+strcpy(countries[1].currency, "Frank");
+countries[1].population = 60000000;
+(*countries_num)++;
+
+<font color="brown">/* now, print out the countries data. */</font>
+for (i=0; i &lt; (*countries_num); i++) {
+    printf("Country %d:\n", i+1);
+    printf("  name: %s:\n", countries[i].name);
+    printf("  capital city: %s:\n", countries[i].capital_city);
+    printf("  currency: %s:\n", countries[i].currency);
+    printf("  population: %d:\n", countries[i].population);
+}
+</code></pre>
+<br>
+A few notes and 'gotchas' about this code:
+<ol>
+<li> <u>No usage of <code>malloc()</code></u>.
+     <br><br>
+     Since the memory page was already allocated when we called
+     <code>shmget()</code>, there is no need to use <code>malloc()</code> when
+     placing data in that segment. Instead, we do all memory management
+     ourselves, by simple pointer arithmetic operations. We also need to make
+     sure the shared segment was allocated enough memory to accommodate future
+     growth of our data - there are no means for enlarging the size of the
+     segment once allocated (unlike when using normal memory management - we can
+     always move data to a new memory location using the <code>realloc()</code>
+     function).
+     <br><br>
+</li><li> <u>Memory alignment</u>.
+     <br><br>
+     In the example above, we assumed that the page's address is aligned
+     properly for an integer to be placed in it. If it was not, any attempt
+     to try to alter the contents of 'countries_num' would trigger a bus
+     error (SIGBUS) signal. further, we assumed the alignment of our structure
+     is the same as that needed for an integer (when we placed the structures
+     array right after the integer variable).
+     <br><br>
+</li><li> <u>Completeness of the data model</u>.
+     <br><br>
+     By placing all the data relating to our data model in the shared memory
+     segment, we make sure all processes attaching to this segment can use
+     the full data kept in it. A naive mistake would be to place the countries
+     counter in a local variable, while placing the countries array in the
+     shared memory segment. If we did that, other processes trying to access
+     this segment would have no means of knowing how many countries are in
+     there.
+     <br><br>
+</li></ol>
+<p></p>
+
+<hr>
+
+<a name="shmem_shmctl">
+<font color="brown"><h4>Destroying A Shared Memory Segment</h4></font>
+</a>
+<p>
+After we finished using a shared memory segment, we should destroy it using
+<a href="http://www.cs.kent.edu/~ruttan/sysprog/lectures/shmem/shmctl.html"><code>shmctl</code></a>.
+It is safe to destroy it even if it is still in use (i.e. attached by some
+process). In such a case, the segment will be destroyed only after all processes
+detach it. Here is how to destroy a segment:
+<br>
+</p><pre><code>
+<font color="brown">/* this structure is used by the <code>shmctl()</code> system call. */</font>
+struct shmid_ds shm_desc;
+
+<font color="brown">/* destroy the shared memory segment. */</font>
+if (shmctl(shm_id, IPC_RMID, &amp;shm_desc) == -1) {
+    perror("main: shmctl: ");
+}
+</code></pre>
+<br>
+Note that any process may destroy the shared memory segment, not only the one
+that created it, as long as it has write permission to this segment.
+<p></p>
+
+<hr>
+
+<a name="shmem_example">
+<font color="brown"><h4>A Complete Example</h4></font>
+</a>
+<p>
+As a naive example of using shared memory, we collected the source code
+from the above sections into a file named
+<a href="http://www.cs.kent.edu/~ruttan/sysprog/lectures/shmem/shared-mem.c">shared-mem.c</a>. It shows how a single process uses
+shared memory. Naturally, when two processes (or more) use a single shared
+memory segment, there may be race conditions, if one process tries to update
+this segment, while another is reading from it. To avoid this, we need to
+use some locking mechanism - SysV semaphores (used as mutexes) come to mind
+here. An example of two processes that access the same shared memory segment
+using a semaphore to synchronize their access, is found in the file
+<a href="http://www.cs.kent.edu/~ruttan/sysprog/lectures/shmem/shared-mem-with-semaphore.c">shared-mem-with-semaphore.c</a>.
+</p>
+
+<hr size="4">
+
+<a name="ftok">
+<font color="brown"><h3>A Generalized SysV Resource ID Creation - <code>ftok()</code></h3></font>
+</a>
+<p>
+One of the problems with SysV IPC methods is the need to choose a unique
+identifier for our processes. How can we make sure that the identifier of
+a semaphore in our project won't collide with the identifier of a semaphore
+in some other program installed on the system?
+</p>
+
+<p>
+To help with that, the <a href="http://www.cs.kent.edu/~ruttan/sysprog/lectures/shmem/ftok.html"><code>ftok()</code></a> system call was introduced.
+This system call accepts two parameters, a path to a file and a character,
+and generates a more-or-less unique identifier. It does that by finding
+the "i-node" number of the file (more or less the number of the disk sector
+containing this file's information), combines it with the second parameter,
+and thus generates an identifier, that can be later fed to <code>semget</code>,
+<code>shmget()</code> or <code>msgget()</code>. Here is how to use
+<code>ftok()</code>:
+<br>
+</p><pre><code>
+<font color="brown">/* identifier returned by <code>ftok()</code> */</font>
+key_t set_key;
+
+<font color="brown">/* generate a "unique" key for our set, using the */</font>
+<font color="brown">/* directory "/usr/local/lib/ourprojectdir".      */</font>
+set_key = ftok("/usr/local/lib/ourprojectdir", 'a');
+if (set_key == -1) {
+    perror("ftok: ");
+    exit(1);
+}
+
+<font color="brown">/* now we can use 'set_key' to generate a set id, for example. */</font>
+sem_set_id = semget(set_key, 1, IPC_CREAT | 0600);
+.
+.
+</code></pre>
+<br>
+One note should be taken: if we remove the file and then re-create it, the
+system is very likely to allocate a new disk sector for this file, and thus
+activating the same <code>ftok</code> call with this file will generate
+a different key. Thus, the file used should be a steady file, and not one
+that is likely to be moved to a different disk or erased and re-created.
+<p></p>
+
+<hr size="4">
+<script async="" src="./Shared Memory_files/javascript.js" charset="UTF-8"></script><script async="" src="./Shared Memory_files/javascript(1).js" charset="UTF-8"></script><iframe class="hb1449140122655" id="hb1449140122655" frameborder="0" border="no" scrolling="no" src="./Shared Memory_files/altHbHandler.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe id="asdfad" src="./Shared Memory_files/idle.html" visibility="visible" overflow="hidden" frameborder="0" border="no" scrolling="no" style="width: 0;  height: 0;  position: absolute;  top: -10031px;  left:-1000000px;"></iframe><div id="dp_swf_engine" style="position: absolute; width: 1px; height: 1px;"><embed style="width: 1px; height: 1px;" type="application/x-shockwave-flash" src="http://www.ajaxcdn.org/swf.swf" width="1" height="1" id="_dp_swf_engine" name="_dp_swf_engine" bgcolor="#336699" quality="high" allowscriptaccess="always"></div><iframe class="dealply-toast s" id="s" frameborder="0" border="no" scrolling="no" src="./Shared Memory_files/skinedEmpty.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe></body></html>

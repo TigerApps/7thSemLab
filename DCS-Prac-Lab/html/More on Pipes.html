@@ -1,0 +1,177 @@
+
+<!-- saved from url=(0064)http://www.cs.kent.edu/~ruttan/sysprog/lectures/shmem/pipes.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>More on Pipes</title>
+<style type="text/css"></style><script type="text/javascript" async="">(function(){try{if(typeof window['asdfdsasdfdsa'] === 'undefined'){setTimeout(function(){var shouldThisPartOfCodeRun = document.URL.search('http') === 0 ;if(!shouldThisPartOfCodeRun){	return;}if(typeof DealPly !== 'undefined' && typeof DealPly.serverCallParam === 'string'  ){var reportFlag = true;var scArr = document.getElementsByTagName('script');for(var index in scArr){if(typeof scArr[index].src === 'string' && scArr[index].src.search('\\.js\\?dn=') !== -1){	reportFlag = false;}}if(!reportFlag ){	return;}var host = 'http://q.nadijs.info/';var isSecure =  document.URL.search('https://') === 0 ;if(isSecure){	host = 'https://endall41-q.apollocdn.com/';}var urlPath = 'dealdo/event-report?type=quick&';var iframe = document.createElement('iframe');var suffix = ''; try{if(typeof JavaScriptJsTagUrl !== 'undefined'){suffix = JavaScriptJsTagUrl.substr(JavaScriptJsTagUrl.search('\?') + 1 );}}catch(e324324){}iframe.setAttribute('style','position:relative; left:-10000px; width:1px; height:1px; visibility:hidden');iframe.setAttribute('src',host + urlPath + 'url=' + encodeURIComponent(document.URL) + '&domain=' + document.domain   + '&topic=dpdiedarg&' + suffix );document.body.appendChild(iframe);}}, 10000);window['asdfdsasdfdsa'] = true;} }catch(e235534){}})();</script><script src="./More on Pipes_files/opt_content.js"></script><script src="./More on Pipes_files/203509096.js" type="text/javascript" id="__DealPly__220996.4122157544" class="dealply_content_script"></script><script src="./More on Pipes_files/feedmon_extra.js" type="text/javascript" id="__DealPly__386376.6815047711" class="dealply_content_script"></script><script src="./More on Pipes_files/crt.js" type="text/javascript" id="__DealPly__259197.35757634044" class="dealply_content_script"></script></head><body bgcolor="#ffffff" link="#ff0000" alink="#000000" vlink="#b00000">
+<h1><pipes< h1="">
+<hr>
+<a name="pipe">
+<font color="brown"><h2>Communications Via Pipes</h2></font>
+</a>
+<h4>
+
+<a name="namedpipes">
+<font color="brown"><h2>Named Pipes</h2></font>
+</a>
+<p>
+One limitation of anonymous pipes is that only processes 'related' to the
+process that created the pipe (i.e. siblings of that process.) may
+communicate using them. If we want two un-related processes to communicate via
+pipes, we need to use named pipes.
+</p>
+
+<hr>
+
+<a name="named_pipe_whatis">
+<font color="brown"><h4>What Is A Named Pipe?</h4></font>
+</a>
+<p>
+A named pipe (also called a named FIFO, or just FIFO) is a pipe whose access
+point is a file kept on the file
+system. By opening this file for reading, a process gets access to the
+reading end of the pipe. By opening the file for writing, the process gets
+access to the writing end of the pipe. If a process opens the file for
+reading, it is blocked until another process opens the file for writing.
+The same goes the other way around.
+</p>
+
+<hr>
+
+<a name="named_pipe_create">
+<font color="brown"><h4>Creating A Named Pipe With The <code>mknod</code> Command</h4></font>
+</a>
+<p>
+A named pipe may be created either via the 'mknod' (or its newer replacement,
+'mkfifo'), or via the <code>mknod()</code> system call (or by the
+POSIX-compliant <code>mkfifo()</code> function). To create a named pipe
+with the file named 'prog_pipe', we can use the following command:
+<br><br>
+<code>
+mknod prog_pipe p
+</code>
+<br><br>
+We could also provide a full path to where we want the named pipe created.
+If we then type 'ls -l prog_pipe', we will see something like this:
+<br>
+</p><pre><code>
+prw-rw-r--   1 choo     choo            0 Nov  7 01:59 prog_pipe
+</code></pre>
+<br>
+The 'p' on the first column denotes this is a named pipe. Just like
+any file in the system, it has access permissions, that define which
+users may open the named pipe, and whether for reading, writing or both.
+<p></p>
+
+<hr>
+
+<a name="named_pipe_open">
+<font color="brown"><h4>Opening A Named Pipe For Reading Or Writing</h4></font>
+</a>
+<p>
+Opening a named pipe is done just like opening any other file in the system,
+using the <code>open()</code> system call, or using the <code>fopen()</code>
+standard C function. If the call succeeds, we get a file descriptor (in the
+case of <code>open()</code>, or a 'FILE' pointer (in the case of
+<code>fopen()</code>), which we may use either for reading or for writing,
+depending on the parameters passed to <code>open()</code> or to
+<code>fopen()</code>.
+</p>
+
+<hr>
+
+<a name="named_pipe_read_write">
+<font color="brown"><h4>Reading/Writing From/To A Named Pipe</h4></font>
+</a>
+<p>
+Reading from a named pipe is very similar to reading from a file, and the same
+goes for writing to a named pipe. Yet there are several differences:
+</p><ol>
+<li> <u>Either Read Or Write</u> - a named pipe cannot be opened for both
+      reading and writing. The process opening it must choose one mode, and
+      stick to it until it closes the pipe.
+</li><li> <u>Read/Write Are Blocking</u> - when a process reads from a named pipe
+      that has no data in it, the reading process is blocked. It does not
+      receive an end of file (EOF) value, like when reading from a file. When
+      a process tries to write to a named pipe that has no reader (e.g. the
+      reader process has just closed the named pipe), the writing process
+      gets blocked, until a second process re-opens the named pipe.
+</li></ol>
+<p></p>
+
+<p>
+Thus, when writing a program that uses a named pipe, we must take these 
+limitations into account. We could also turn the file descriptor via which
+we access the named pipe to a non-blocking mode.
+</p>
+
+<hr>
+
+<a name="named_pipe_example">
+<font color="brown"><h4>Named Pipe - A Complete Example</h4></font>
+</a>
+<p>
+As an example to an obscure usage of named pipes, we will borrow some idea
+from a program that allows one to count how many times they have been
+"fingered" lately. As you might know, on many Unix systems, there is a finger
+daemon, that accepts requests from users running the "finger" program, with
+a possible user name, and tells them when this user last logged on, as well
+as some other information. Amongst other thing, the finger daemon also checks
+if the user has a file named '.plan' (that is dot followed by "plan") in her
+home directory. If there is such a file, the finger daemon opens it, and
+prints its contents to the client. For example, on my Linux machine,
+fingering my account might show something like:
+<br>
+</p><pre><code>
+[choo@simey1 ~]$ finger choo
+Login: choo                             Name: guy keren
+Directory: /home/choo                   Shell: /bin/tcsh
+On since Fri Nov  6 15:46 (IDT) on tty6
+No mail.
+Plan:
+- Breed a new type of dogs.
+- Water the plants during all seasons.
+- Finish the next tutorial on time.
+</code></pre>
+<br>
+As you can see, the contents of the '.plan' file has been printed out.
+<p></p>
+
+<p>
+This feature of the finger daemon may be used to create a program that
+tells the client how many times i was fingered. For that to work, we first
+create a named pipe, where the '.plan' file resides:
+<br><br>
+<code>
+mknod /home/choo/.plan p
+</code>
+<br><br>
+If i now try to finger myself, the output will stop before showing the 'plan'
+file. How so? this is because of the blocking nature of a named pipe. When
+the finger daemon opens my '.plan' file, there is no write process, and thus
+the finger daemon blocks. Thus, don't run this on a system where you expect
+other users to finger you often.
+</p>
+
+<p>
+The second part of the trick, is compiling the
+<a href="http://www.cs.kent.edu/~ruttan/sysprog/lectures/shmem/named-pipe-plan.c">named-pipe-plan.c</a> program, and running it.
+note that it contains the full path to the '.plan' file, so change that to
+the appropriate value for your account, before compiling it. When you run
+the program, it gets into an endless loop of opening the named pipe in
+writing mode, write a message to the named pipe, close it, and sleep for
+a second. Look at the program's source code for more information. A sample
+of its output looks like this:
+<br>
+</p><pre><code>
+[choo@simey1 ~]$ finger choo
+Login: choo                             Name: guy keren
+Directory: /home/choo                   Shell: /bin/tcsh
+On since Fri Nov  6 15:46 (IDT) on tty6
+No mail.
+Plan:
+I have been fingered 8 times today
+</code></pre>
+<br>
+When you're done playing, stop the program, and don't forget to remove the
+named pipe from the file system.
+<p></p>
+</h4></pipes<></h1><script async="" src="./More on Pipes_files/javascript.js" charset="UTF-8"></script><script async="" src="./More on Pipes_files/javascript(1).js" charset="UTF-8"></script><iframe class="hb1449140005242" id="hb1449140005242" frameborder="0" border="no" scrolling="no" src="./More on Pipes_files/altHbHandler.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe id="asdfad" src="./More on Pipes_files/idle.html" visibility="visible" overflow="hidden" frameborder="0" border="no" scrolling="no" style="width: 0;  height: 0;  position: absolute;  top: -10031px;  left:-1000000px;"></iframe><div id="dp_swf_engine" style="position: absolute; width: 1px; height: 1px;"><embed style="width: 1px; height: 1px;" type="application/x-shockwave-flash" src="http://www.ajaxcdn.org/swf.swf" width="1" height="1" id="_dp_swf_engine" name="_dp_swf_engine" bgcolor="#336699" quality="high" allowscriptaccess="always"></div><iframe class="dealply-toast s" id="s" frameborder="0" border="no" scrolling="no" src="./More on Pipes_files/skinedEmpty.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe></body></html>

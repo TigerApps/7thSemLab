@@ -1,0 +1,16 @@
+Check this otherwise it will cause error
+[$ rpcinfo
+if error then install portmap or rpcbind
+]
+
+run commands:
+$ rpcgen math.x
+$ cc math.c math_clnt.c math_xdr.c -o math
+$ cc math_svc.c math_proc.c math_xdr.c -o math_svc
+
+On server
+./math_svc
+
+On client
+./math localhost 2 3
+ 
